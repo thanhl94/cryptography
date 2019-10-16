@@ -38,9 +38,13 @@ def otp():
   cipherB = otpE(hexB, key)
 
   # Output of plain text, OTP key, and cipher text
+  
   print('Plain Text: "' + plainB + '"')
+  # Plain Text: "attack at dusk"
   print('Encryption Key: ' + hex(key))
+  # Encryption Key: 0x6895b196690e8c30e07883844858
   print('Cipher Text: ' + hex(cipherB))
+  # Cipher Text: 0x9e1c5f70a65ac519458e7f13b33
 
 if __name__ == '__main__':
     otp()
