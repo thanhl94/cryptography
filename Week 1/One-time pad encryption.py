@@ -1,13 +1,20 @@
 import binascii
 
+# Note:
+# otpK and otpE can be combined or used as the same function as OTP
+# encryption can be communtative with each other. For representation
+# purposes, these will be separated as function to get key and cipher
+
+# This function take in a plaintext and a cipher text and get the key
 def optK(data, cipher):
   key = data ^ cipher
   return key
-
+# This function encrypt plaintext by xor plaintext with the key
 def otpE(data, key):
   cipher = data ^ key
   return cipher
 
+# Convert our string plaintext into usable hex
 def string2hex(data):
   temp = binascii.hexlify(data.encode('utf-8'))
   string2hex = str(temp,'ascii')
@@ -17,16 +24,16 @@ def string2hex(data):
 
 def otp():
 
-  # Given plain text message A and it encrypted form from 
+  # Given plaintext message A and it encrypted form from 
   # One-time pad encryption
   plainA = "attack at dawn"
   cipherA = 0x09e1c5f70a65ac519458e7e53f36
 
-  # Given plain text B, we need to get its encrypted form
+  # Given plaintext B, we need to get its encrypted form
   plainB = "attack at dusk"
 
   # 1st We need to finds OTP key by xor plain text msg with cipher text
-  # Before that, we need to convert plain text A into hex format
+  # Before that, we need to convert plaintext A into hex format
   hexA = string2hex(plainA)
 
   # Then we can get the key by decrypting the two 
