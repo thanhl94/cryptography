@@ -26,11 +26,17 @@ def otp():
 
   # Given plaintext message A and it encrypted form from 
   # One-time pad encryption
-  plainA = "attack at dawn"
-  cipherA = 0x09e1c5f70a65ac519458e7e53f36
+  # Test case:
+  # plainA = "attack at dawn"
+  # cipherA = 09e1c5f70a65ac519458e7e53f36
+  plainA = input("Enter your plaintext: ")
+  rawinput = "0x" + input("Enter your ciphertext: ")
+  cipherA = int(rawinput, 16)
 
   # Given plaintext B, we need to get its encrypted form
-  plainB = "attack at dusk"
+  # Test case:
+  # plainB = "attack at dusk"
+  plainB = input("Enter your plaintext to encrypt: ")
 
   # 1st We need to finds OTP key by xor plain text msg with cipher text
   # Before that, we need to convert plaintext A into hex format
